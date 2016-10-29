@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A64499AE1DBCE1ED00A4CCAF /* answerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A64499AD1DBCE1ED00A4CCAF /* answerViewController.swift */; };
+		A64499B01DBCE20100A4CCAF /* resultViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A64499AF1DBCE20100A4CCAF /* resultViewController.swift */; };
+		A68DCD0E1DC36165009398B7 /* question.plist in Resources */ = {isa = PBXBuildFile; fileRef = A68DCD0D1DC36165009398B7 /* question.plist */; };
 		A6A80D981DBCAEF500A7CBA0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6A80D971DBCAEF500A7CBA0 /* AppDelegate.swift */; };
 		A6A80D9A1DBCAEF500A7CBA0 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6A80D991DBCAEF500A7CBA0 /* ViewController.swift */; };
 		A6A80D9D1DBCAEF500A7CBA0 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A6A80D9B1DBCAEF500A7CBA0 /* Main.storyboard */; };
@@ -35,6 +38,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		A64499AD1DBCE1ED00A4CCAF /* answerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = answerViewController.swift; sourceTree = "<group>"; };
+		A64499AF1DBCE20100A4CCAF /* resultViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = resultViewController.swift; sourceTree = "<group>"; };
+		A68DCD0D1DC36165009398B7 /* question.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = question.plist; sourceTree = "<group>"; };
 		A6A80D941DBCAEF500A7CBA0 /* exam-unit.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "exam-unit.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		A6A80D971DBCAEF500A7CBA0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A6A80D991DBCAEF500A7CBA0 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -101,7 +107,10 @@
 			children = (
 				A6A80D971DBCAEF500A7CBA0 /* AppDelegate.swift */,
 				A6A80D991DBCAEF500A7CBA0 /* ViewController.swift */,
+				A64499AF1DBCE20100A4CCAF /* resultViewController.swift */,
+				A64499AD1DBCE1ED00A4CCAF /* answerViewController.swift */,
 				A6A80D9B1DBCAEF500A7CBA0 /* Main.storyboard */,
+				A68DCD0D1DC36165009398B7 /* question.plist */,
 				A6A80DA11DBCAEF500A7CBA0 /* Assets.xcassets */,
 				A6A80DA31DBCAEF500A7CBA0 /* LaunchScreen.storyboard */,
 				A6A80DA61DBCAEF500A7CBA0 /* Info.plist */,
@@ -237,6 +246,7 @@
 			files = (
 				A6A80DA51DBCAEF500A7CBA0 /* LaunchScreen.storyboard in Resources */,
 				A6A80DA21DBCAEF500A7CBA0 /* Assets.xcassets in Resources */,
+				A68DCD0E1DC36165009398B7 /* question.plist in Resources */,
 				A6A80D9D1DBCAEF500A7CBA0 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -262,6 +272,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A64499B01DBCE20100A4CCAF /* resultViewController.swift in Sources */,
+				A64499AE1DBCE1ED00A4CCAF /* answerViewController.swift in Sources */,
 				A6A80DA01DBCAEF500A7CBA0 /* exam_unit.xcdatamodeld in Sources */,
 				A6A80D9A1DBCAEF500A7CBA0 /* ViewController.swift in Sources */,
 				A6A80D981DBCAEF500A7CBA0 /* AppDelegate.swift in Sources */,
@@ -507,6 +519,7 @@
 				A6A80DC11DBCAEF500A7CBA0 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		A6A80DC21DBCAEF500A7CBA0 /* Build configuration list for PBXNativeTarget "exam-unitTests" */ = {
 			isa = XCConfigurationList;
@@ -515,6 +528,7 @@
 				A6A80DC41DBCAEF500A7CBA0 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		A6A80DC51DBCAEF500A7CBA0 /* Build configuration list for PBXNativeTarget "exam-unitUITests" */ = {
 			isa = XCConfigurationList;
@@ -523,6 +537,7 @@
 				A6A80DC71DBCAEF500A7CBA0 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 
