@@ -138,12 +138,15 @@ class answerViewController: UIViewController {
             
             if self.rightans == 4 {
                 let choose = mystoryBoard?.instantiateViewController(withIdentifier: "choose") as! ViewController
+                if self.currentLevel < 9 {
                 choose.allLevels[currentLevel] = 1
                 choose.writeAllLevel()
+                } else if self.currentLevel == 9 {
+                    print("恭喜通过")
+                }
             }
             
-            self.present(results, animated: true, completion: nil)
-            
+            self.navigationController?.pushViewController(results, animated: true)
         }
  
     }
@@ -168,12 +171,15 @@ class answerViewController: UIViewController {
                 results.rightresult = "答对\(self.rightans)"
                 results.wrongresult = "答错\(4 - self.rightans)"
                 if self.rightans == 4 {
-                    let choose = ViewController()
+                  let choose = mystoryBoard?.instantiateViewController(withIdentifier: "choose") as! ViewController
+                    if self.currentLevel < 9 {
                     choose.allLevels[self.currentLevel] = 1
                     choose.writeAllLevel()
+                    } else if self.currentLevel == 9 {
+                        print("恭喜你通过")
+                    }
                 }
-              self.present(results, animated: true, completion: nil)
-            
+              self.navigationController?.pushViewController(results, animated: true)
                 //self.present(resultsnav, animated: true, completion: nil)
              
             })
@@ -183,10 +189,18 @@ class answerViewController: UIViewController {
         }
     }
     
+    func goBack() {
+      
+       self.navigationController?.popToRootViewController(animated: true)
+        
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
-       
+        self.navigationItem.title = "答题界面"
+        self.navigationItem.leftBarButtonItem = UIBarButtonItem(title: "返回", style: .plain, target: self, action: #selector(self.goBack))
+
         //隐藏4个视图
         self.img1.isHidden = true
         self.img2.isHidden = true
@@ -226,6 +240,10 @@ class answerViewController: UIViewController {
         self.mainquestion.lineBreakMode = .byWordWrapping
         
         self.mainquestion.numberOfLines = 0
+        //self.abtn1.titleLabel?.adjustsFontSizeToFitWidth = true
+        self.abtn1.titleLabel?.numberOfLines = 2
+        self.abtn2.titleLabel?.numberOfLines = 2
+        //self.abtn2.titleLabel?.adjustsFontSizeToFitWidth = true
         answerTime = 10
         self.countDownTime = Timer.scheduledTimer(timeInterval: 1.0, target: self, selector: #selector(self.timecount), userInfo: nil, repeats: true)
     }

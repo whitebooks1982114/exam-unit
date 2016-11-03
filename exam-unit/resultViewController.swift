@@ -22,10 +22,15 @@ class resultViewController: UIViewController {
     var wrongresult:String = ""
     var success: String = ""
 
-    
+    func goBack() {
+    self.navigationController?.popToRootViewController(animated: true)
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        self.navigationItem.title = "结果界面"
+        self.navigationItem.leftBarButtonItem = UIBarButtonItem(title: "返回", style: .plain, target: self, action: #selector(self.goBack))
         self.nextlevel.text = success
         self.rightnum.text = self.rightresult
         self.wrongnun.text = self.wrongresult

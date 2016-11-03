@@ -41,14 +41,12 @@ class ViewController: UIViewController {
     @IBAction func turnanswer(_ sender: UIButton) {
         let btn  = sender as UIButton
         let tag  = btn.tag
-        allLevels[0] = 1
         if allLevels[tag-1] == 1 {
             let mystoryBoard = self.storyboard
-            //let answernav = mystoryBoard?.instantiateViewController(withIdentifier: "answernav")
             let answer = mystoryBoard?.instantiateViewController(withIdentifier: "answer") as! answerViewController
             answer.currentLevel = tag
             answer.currentQuestion = 4*(tag - 1)
-            self.present(answer, animated: true, completion: nil)
+          self.navigationController?.pushViewController(answer, animated: true)
         }else {
             let alart = UIAlertController(title: "警告", message: "请您先闯过上一关", preferredStyle: .alert)
             let okaction = UIAlertAction(title: "好的", style: .cancel, handler: nil)
