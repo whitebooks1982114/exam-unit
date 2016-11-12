@@ -9,14 +9,14 @@
 import UIKit
 
 class answerViewController: UIViewController {
-  
+    
    
     //计算每一关答过的题目，若果过四关就跳转至结果界面
     var answeredquestion = 0
     //倒计时
     var countDownTime: Timer? = nil
     //题目编号集合
-    let questionNum: NSArray = []
+    let questionNum1: NSArray = []
     //当前题目数
     var currentQuestion:Int?
     //倒计时
@@ -137,10 +137,9 @@ class answerViewController: UIViewController {
             }
             
             if self.rightans == 4 {
-                let choose = mystoryBoard?.instantiateViewController(withIdentifier: "choose") as! ViewController
                 if self.currentLevel < 9 {
-                choose.allLevels[currentLevel] = 1
-                choose.writeAllLevel()
+                allLevels[currentLevel] = 1
+                writeAllLevel()
                 } else if self.currentLevel == 9 {
                     print("恭喜通过")
                 }
@@ -171,10 +170,10 @@ class answerViewController: UIViewController {
                 results.rightresult = "答对\(self.rightans)"
                 results.wrongresult = "答错\(4 - self.rightans)"
                 if self.rightans == 4 {
-                  let choose = mystoryBoard?.instantiateViewController(withIdentifier: "choose") as! ViewController
+   
                     if self.currentLevel < 9 {
-                    choose.allLevels[self.currentLevel] = 1
-                    choose.writeAllLevel()
+                      allLevels[self.currentLevel] = 1
+                        writeAllLevel()
                     } else if self.currentLevel == 9 {
                         print("恭喜你通过")
                     }

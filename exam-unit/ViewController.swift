@@ -8,6 +8,24 @@
 
 import UIKit
 
+//记录所有关卡状态
+var allLevels = [1,0,0,0,0,0,0,0,0]
+func writeAllLevel() {
+    let ud = UserDefaults.standard
+    for i in 0...8 {
+        ud.set(allLevels[i], forKey: "Level\(i + 1)")
+        
+    }
+}
+
+func readAllLevel() {
+    let ud = UserDefaults.standard
+    for i in 0...8 {
+        allLevels[i] = ud.integer(forKey: "Level\(i + 1)")
+        
+    }
+}
+
 class ViewController: UIViewController {
 
     @IBOutlet weak var btn9: UIButton!
@@ -18,23 +36,6 @@ class ViewController: UIViewController {
     @IBOutlet weak var btn4: UIButton!
     @IBOutlet weak var btn3: UIButton!
     @IBOutlet weak var btn2: UIButton!
-    //记录所有关卡状态
-   var allLevels = [1,0,0,0,0,0,0,0,0]
-    func writeAllLevel() {
-        let ud = UserDefaults.standard
-        for i in 0...8 {
-            ud.set(allLevels[i], forKey: "Level\(i+1)")
-            
-        }
-    }
-    
-    func readAllLevel() {
-        let ud = UserDefaults.standard
-        for i in 0...8 {
-          allLevels[i] = ud.integer(forKey: "Level\(i+1)")
-            
-        }
-    }
     
     
     //如果关卡开锁转入答题界面，否则弹出警告框
@@ -59,14 +60,14 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        readAllLevel()
+      
         allLevels[0] = 1
         // Do any additional setup after loading the view, typically from a nib.
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)
-        
+          readAllLevel()
         //记录关卡按钮状态
         let btns: [UIButton] = [btn2,btn3,btn4,btn5,btn6,btn7,btn8,btn9]
        //遍历按钮，调整是否有锁图案
